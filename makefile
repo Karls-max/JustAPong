@@ -15,6 +15,7 @@ jar:
 clean:
 	find . -type f -name "*.class" -delete
 	find . -type f -name "*.jar" -delete
+	rm -f sourceList
 
 %:
 	@:
