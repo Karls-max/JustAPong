@@ -1,3 +1,0 @@
-Main-Class: justAPong.Run
-Name: justAPong/Run.class
-Java-Bean: True
