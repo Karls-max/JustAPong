@@ -13,17 +13,17 @@ public class LoopTimer {
     setFPS(DEFAULT_FPS);
   } 
 
-  public void setFPS(double fps) {
+  public synchronized void setFPS(double fps) {
 
     amountOfFPS = 1000000000 / fps;
   }
 
-  public void initTimer() {
+  public synchronized void initTimer() {
 
     lastTime = System.nanoTime();
   }
 
-  public boolean endTimer() {
+  public synchronized boolean endTimer() {
 	
     currentTime = System.nanoTime();
 	
