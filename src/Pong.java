@@ -6,15 +6,19 @@ public class Pong implements Runnable {
 
   private Window window;
   private Thread thread;
-  private LoopTimer timer;
+  private LoopTimer pongLoop;
   private boolean isRunning = false;
 
   public static final int WIDTH = 320, HEIGHT = 240;
 
+  private LoopTimer testTimer;//test
+
   public Pong() {
     
-    timer = new LoopTimer();
-    timer.setTimer(1.0);
+    pongLoop = new LoopTimer();
+    pongLoop.setCounter(2.0);
+    testTimer = new LoopTimer();//test
+    testTimer.setTimer(2.0);//test
     window = new Window("Pong", WIDTH, HEIGHT);
   }
 
@@ -41,11 +45,9 @@ public class Pong implements Runnable {
 
   public void run(){
 
-    timer.initTimer();
-
     while(isRunning){
 
-      if(timer.endTimer()){
+      if(pongLoop.endTimer(false)){
                 
           logic();
                 
@@ -58,7 +60,10 @@ public class Pong implements Runnable {
 
   private void logic() {
 
-    System.out.println("hello there");
+    System.out.println("hello there");//test
+    if(testTimer.endTimer(false)){//test
+      System.out.println("hi");//test
+    }
   }
 
   private void render() {
