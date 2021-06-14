@@ -5,17 +5,17 @@ public class LoopTimer {
   private final double DEFAULT_FPS = 60.0;
 
   private long lastTime, currentTime;
-  private double amountOfFPS;
+  private double amountOfTime;
 
   public LoopTimer() {
 
     initTimer();
-    setFPS(DEFAULT_FPS);
+    setTimer(DEFAULT_FPS);
   } 
 
-  public synchronized void setFPS(double fps) {
+  public synchronized void setTimer(double counter) {
 
-    amountOfFPS = 1000000000 / fps;
+    amountOfTime = 1000000000 / counter;
   }
 
   public synchronized void initTimer() {
@@ -27,7 +27,7 @@ public class LoopTimer {
 	
     currentTime = System.nanoTime();
 	
-    if(((currentTime - lastTime)/amountOfFPS) >= 1) {
+    if(((currentTime - lastTime)/amountOfTime) >= 1) {
 
       lastTime = currentTime;
       return true;

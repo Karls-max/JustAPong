@@ -14,7 +14,7 @@ public class Pong implements Runnable {
   public Pong() {
     
     timer = new LoopTimer();
-    timer.setFPS(1.0);
+    timer.setTimer(1.0);
     window = new Window("Pong", WIDTH, HEIGHT);
   }
 
