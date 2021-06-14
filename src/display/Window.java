@@ -2,6 +2,8 @@ package justAPong.display;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.event.KeyListener;
+import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 
@@ -24,5 +26,20 @@ public class Window extends Canvas{
     jframe.setResizable(false);
     jframe.setLocationRelativeTo(null);
     jframe.setVisible(true);
+  }
+
+  public BufferStrategy getBS(){
+
+    return getBufferStrategy();
+  }
+
+  public void createBS(){
+
+    createBufferStrategy(3);
+  }
+
+  public void setKL(KeyListener kL){
+
+    jframe.addKeyListener(kL);
   }
 }
