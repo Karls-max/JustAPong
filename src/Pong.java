@@ -9,7 +9,8 @@ public class Pong implements Runnable {
   private LoopTimer pongLoop;
   private boolean isRunning = false;
 
-  public static final int WIDTH = 320, HEIGHT = 240;
+  public static final int WIDTH = 270, HEIGHT = 180;
+  public static int scale = 3;
 
   private LoopTimer testTimer;//test
 
@@ -19,7 +20,7 @@ public class Pong implements Runnable {
     pongLoop.setCounter(2.0);
     testTimer = new LoopTimer();//test
     testTimer.setTimer(2.0);//test
-    window = new Window("Pong", WIDTH, HEIGHT);
+    window = new Window("Pong", WIDTH*scale, HEIGHT*scale);
   }
 
   public synchronized void start() {
