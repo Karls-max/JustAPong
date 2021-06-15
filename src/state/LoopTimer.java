@@ -1,4 +1,4 @@
-package justAPong.display;
+package justAPong.state;
 
 public class LoopTimer {
 

@@ -1,6 +1,9 @@
 package justAPong;
 
 import justAPong.display.*;
+import justAPong.entities.*;
+import justAPong.state.*;
+import justAPong.io.*;
 
 import java.awt.Graphics;
 import java.awt.Color;
