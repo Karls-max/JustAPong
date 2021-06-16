@@ -13,9 +13,10 @@ public class Window extends Canvas{
 	
   public Window(String title, int width, int height) {
 
-    setPreferredSize(new Dimension(width, height));
-    setMaximumSize(new Dimension(width, height));
-    setMinimumSize(new Dimension(width, height));
+    Dimension dimension = new Dimension(width, height);
+    setPreferredSize(dimension);
+    setMaximumSize(dimension);
+    setMinimumSize(dimension);
     setFocusable(false);
 		
     jframe = new JFrame(title);
@@ -38,8 +39,8 @@ public class Window extends Canvas{
     createBufferStrategy(3);
   }
 
-  public void setKL(KeyListener kL){
+  public void setKL(KeyListener keyL){
 
-    jframe.addKeyListener(kL);
+    jframe.addKeyListener(keyL);
   }
 }

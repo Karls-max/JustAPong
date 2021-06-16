@@ -1,5 +1,5 @@
 package justAPong.entities;
 
-public class Player {
+public class Player extends Entitie {
 
 }

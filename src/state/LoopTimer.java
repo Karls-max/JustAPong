@@ -2,15 +2,12 @@ package justAPong.state;
 
 public class LoopTimer {
 
-  private final double DEFAULT_FPS = 60.0;
-
   private long lastTime, currentTime;
   private double amountOfTime;
 
   public LoopTimer() {
 
     initTimer();
-    setCounter(DEFAULT_FPS);
   } 
 
   public synchronized void setCounter(double counter) {

@@ -3,7 +3,7 @@ package justAPong;
 import justAPong.display.*;
 import justAPong.entities.*;
 import justAPong.state.*;
-import justAPong.io.*;
+import justAPong.input.*;
 
 import java.awt.Graphics;
 import java.awt.Color;
@@ -18,16 +18,13 @@ public class Pong implements Runnable {
   private BufferedImage bufferImage;
   private boolean isRunning = false;
 
+  private final double DEFAULT_FPS = 2.0;
   public static final int WIDTH = 480, HEIGHT = 320;
-
-  private LoopTimer testTimer;//test
 
   public Pong() {
     
     pongLoop = new LoopTimer();
-    pongLoop.setCounter(2.0);
-    testTimer = new LoopTimer();//test
-    testTimer.setTimer(2.0);//test
+    pongLoop.setCounter(DEFAULT_FPS);
     window = new Window("Pong", WIDTH, HEIGHT);
     bufferImage = new BufferedImage(WIDTH, HEIGHT, 1);
   }
@@ -70,10 +67,7 @@ public class Pong implements Runnable {
 
   private void logic() {
 
-    System.out.println("hello there");//test
-    if(testTimer.endTimer(false)){//test
-      System.out.println("hi");//test
-    }
+    System.out.println("+\n-");
   }
 
   private void render() {
@@ -90,7 +84,7 @@ public class Pong implements Runnable {
     graphic.setColor(new Color(0, 0, 0));
     graphic.fillRect(0, 0, WIDTH ,HEIGHT);
 
-    graphic.setColor(new Color(230, 230, 203));
+    graphic.setColor(new Color(230, 230, 230));
     graphic.fillRect((WIDTH/2)-2,0,4,HEIGHT);
 
     graphic = buffer.getDrawGraphics();
